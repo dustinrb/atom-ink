@@ -17,7 +17,7 @@ goto = require './gotodef'
 
 module.exports = Ink =
   activate: ->
-    mod.activate() for mod in [PaneItem, Result, Docs, Console, PlotPane, Workspace, breakpoints]
+    mod.activate() for mod in [PaneItem, Result, Docs, Console, PlotPane, breakpoints]
 
   deactivate: ->
     pkg = atom.packages.getActivePackage 'ink'

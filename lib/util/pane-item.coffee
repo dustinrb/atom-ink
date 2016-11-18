@@ -23,7 +23,10 @@ class PaneItem
     panes.add this
 
     subs.add atom.views.addViewProvider this, (pane) =>
-      new @View().initialize pane
+      if pane.element?
+        pane.element
+      else
+        new @View().initialize pane
 
     subs.add atom.deserializers.add
       name: "Ink#{@name}"
