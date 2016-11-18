@@ -1,4 +1,6 @@
 {CompositeDisposable} = require 'atom'
+etch = require 'etch'
+
 PaneItem = require './util/pane-item'
 Loading = require './util/loading'
 progress = require './util/progress'
@@ -17,6 +19,7 @@ goto = require './gotodef'
 
 module.exports = Ink =
   activate: ->
+    etch.setScheduler(atom.views)
     mod.activate() for mod in [PaneItem, Result, Docs, Console, PlotPane, breakpoints]
 
   deactivate: ->
